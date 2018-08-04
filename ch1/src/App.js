@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import List from './List';
 //you always need to make a new class a react's component class.
 class App extends Component {
 
@@ -15,14 +16,15 @@ class App extends Component {
   render() {
         console.log('in render')
     return (
-        <ul>
-            <li>Person 1</li>
-            <li>Person 2</li>
-            <li>Person 3</li>
-            <li>Person 4</li>
-        </ul>
+        <div>
+            <List number={6}/>
+            <button id="addbtn">ADD(+)</button>
+            <button id="delbtn">DELETE(-)</button>
+        </div>
     );
   }
 }
 
 export default App;
+/*number and hello are a part of object called props*/
+//think of <List/> as an object of List clas.
