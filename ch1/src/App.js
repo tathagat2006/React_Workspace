@@ -9,7 +9,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            number:6
+            number:0
         };
     }
     // hello() {
@@ -35,7 +35,7 @@ class App extends Component {
         });
     }
   render() {
-        const number = this.state;
+        const {number} = this.state;
         console.log('in render')
     return (
         <div>
