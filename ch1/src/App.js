@@ -9,7 +9,8 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            number:0
+            number:0,
+            listEnabled: false
         };
     }
     // hello() {
@@ -34,14 +35,22 @@ class App extends Component {
             number:number - 1
         });
     }
+
+    toggleList = () => {
+        const {listEnabled} = this.state;
+        this.setState({
+            listEnabled:!listEnabled
+        });
+    }
   render() {
-        const {number} = this.state;
+        const {number,listEnabled} = this.state;
         console.log('in render')
     return (
         <div>
-            <List number={number}/>
+            {listEnabled && <List number={number}/>}
             <button id="addbtn" onClick={this.addToList}>ADD(+)</button>
             <button id="delbtn" onClick={this.subtractToList}>DELETE(-)</button>
+            <button id="togglebtn" onClick={this.toggleList}>TOGGLE LIST</button>
         </div>
     );
   }
@@ -51,4 +60,5 @@ export default App;
 /*number and hello are a part of object called props*/
 //think of <List/> as an object of List clas.
 //state is immutable and on the change of state rerender() is called.
+//setState() calls rerender() itself.
 // .bind() .call() .apply()

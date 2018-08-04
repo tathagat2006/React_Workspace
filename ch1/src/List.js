@@ -8,6 +8,16 @@ class List extends Component {
         super(props);
     }
 
+    componentWillReceiveProps() {
+        console.log('in componentWillReceiveProps')
+    }
+
+    //nextState is also passed in the below function
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('in shouldComponentUpdate')
+    }
+
     renderList() {
         // console.log(this.props);
         let curr = 'A';
