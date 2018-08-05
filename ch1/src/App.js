@@ -10,17 +10,10 @@ class App extends Component {
         super(props);
         this.state = {
             number:0,
-            listEnabled: false
+            listEnabled: true
         };
     }
-    // hello() {
-    //     console.log('use this keyword to call a member function:key concept of difference between member function and function')
-    // }
-    //
-    // componentWillMount() {
-    //     console.log('inside componentWillMount')
-    //     this.hello()
-    // }
+
 
     addToList = () => {
         const {number} = this.state;
@@ -57,8 +50,3 @@ class App extends Component {
 }
 
 export default App;
-/*number and hello are a part of object called props*/
-//think of <List/> as an object of List clas.
-//state is immutable and on the change of state rerender() is called.
-//setState() calls rerender() itself.
-// .bind() .call() .apply()
